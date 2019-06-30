@@ -68,41 +68,41 @@ request(queryUrl, function(error, response, body) {
         var daTime = JS[i].datetime;
             var dateForm = moment(daTime).format('MM/DD/YYYY');
             
-            var stringsBuilder =
-            "\n---------------------------------------------\n" +
-            "Name: " +
-            JS[i].venue.name +
-            "\n" +
-            "City: " + 
-            JS[i].venue.city +
-            "\n" 
-            if (JS[i].venue.region !== "")
-            {
-                "Country: " + 
-                JS[i].venue.region
-            }
-            "\n" +
-            "Country: " + 
-            JS[i].venue.country +
-            "\n" +
-            "Date: " + 
-            dateForm +
-            "\n" +
-            "\n---------------------------------------------\n";
-            logIt(stringsBuilder);
+            // var stringsBuilder =
+            // "\n---------------------------------------------\n" +
+            // "Name: " +
+            // JS[i].venue.name +
+            // "\n" +
+            // "City: " + 
+            // JS[i].venue.city +
+            // "\n" 
+            // if (JS[i].venue.region !== "")
+            // {
+            //     "Country: " + 
+            //     JS[i].venue.region
+            // }
+            // "\n" +
+            // "Country: " + 
+            // JS[i].venue.country +
+            // "\n" +
+            // "Date: " + 
+            // dateForm +
+            // "\n" +
+            // "\n---------------------------------------------\n";
+            // logIt(stringsBuilder);
     
 
             // Code
-            // logIt("\n---------------------------------------------\n");            
-            // logIt("Name: " + JS[i].venue.name);
-            // logIt("City: " + JS[i].venue.city);
-            // if (JS[i].venue.region !== "")
-            // {
-            //     logIt("Country: " + JS[i].venue.region);
-            // }
-            // logIt("Country: " + JS[i].venue.country);
-            // logIt("Date: " + dateForm);
-            // logIt("\n---------------------------------------------\n");
+            logIt("\n---------------------------------------------\n");            
+            logIt("Name: " + JS[i].venue.name);
+            logIt("City: " + JS[i].venue.city);
+            if (JS[i].venue.region !== "")
+            {
+                logIt("Country: " + JS[i].venue.region);
+            }
+            logIt("Country: " + JS[i].venue.country);
+            logIt("Date: " + dateForm);
+            logIt("\n---------------------------------------------\n");
 
         }
     }
