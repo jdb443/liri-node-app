@@ -46,7 +46,7 @@ if (action === 'concert-this')
 	{
 		bandName += process.argv[i];
 	}
-	console.log(bandName);
+    console.log(bandName)
 }
 else
 {
@@ -63,51 +63,54 @@ request(queryUrl, function(error, response, body) {
     if (!error && response.statusCode === 200) {
 
         var JS = JSON.parse(body);
+        // console.log(JS);
         for (i = 0; i < JS.length; i++)
         {
         var daTime = JS[i].datetime;
             var dateForm = moment(daTime).format('MM/DD/YYYY');
-            
-            // var stringsBuilder =
-            // "\n---------------------------------------------\n" +
-            // "Name: " +
-            // JS[i].venue.name +
-            // "\n" +
-            // "City: " + 
-            // JS[i].venue.city +
-            // "\n" 
-            // if (JS[i].venue.region !== "")
-            // {
-            //     "Country: " + 
-            //     JS[i].venue.region
-            // }
-            // "\n" +
-            // "Country: " + 
-            // JS[i].venue.country +
-            // "\n" +
-            // "Date: " + 
-            // dateForm +
-            // "\n" +
-            // "\n---------------------------------------------\n";
-            // logIt(stringsBuilder);
+            var string2 = ""
+            var string1 =
+            "\n---------------------------------------------\n" +
+            "Name: " +
+            JS[i].venue.name +
+            "\n" +
+            "City: " + 
+            JS[i].venue.city +
+            "\n";
+            if (JS[i].venue.region !== "")
+            {
+                string2 = "Country: " + 
+                JS[i].venue.region
+            }
+            var string3 = "\n" +
+            "Country: " + 
+            JS[i].venue.country +
+            "\n" +
+            "Date: " + 
+            dateForm +
+            "\n" +
+            "\n---------------------------------------------\n";
+            logIt(string1+string2+string3);
+  
     
 
             // Code
-            logIt("\n---------------------------------------------\n");            
-            logIt("Name: " + JS[i].venue.name);
-            logIt("City: " + JS[i].venue.city);
-            if (JS[i].venue.region !== "")
-            {
-                logIt("Country: " + JS[i].venue.region);
-            }
-            logIt("Country: " + JS[i].venue.country);
-            logIt("Date: " + dateForm);
-            logIt("\n---------------------------------------------\n");
+            // logIt("\n---------------------------------------------\n");            
+            // logIt("Name: " + JS[i].venue.name);
+            // logIt("City: " + JS[i].venue.city);
+            // if (JS[i].venue.region !== "")
+            // {
+            //     logIt("Country: " + JS[i].venue.region);
+            // }
+            // logIt("Country: " + JS[i].venue.country);
+            // logIt("Date: " + dateForm);
+            // logIt("\n---------------------------------------------\n");
 
         }
     }
 });
 }
+
 function spotSong(parameter) {
 
 
@@ -260,7 +263,7 @@ function logIt(dataToLog) {
 
 	console.log(dataToLog);
 
-	fs.appendFile('log.txt', dataToLog + '\n', function(error) {
+	fs.appendFile('log.txt', dataToLog, function(error) {
 
         if (error) return logIt('Error logging data to file: ' + error);
         	
