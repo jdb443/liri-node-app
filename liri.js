@@ -41,21 +41,21 @@ function bandsInTown(parameter){
 
 if (action === 'concert-this')
 {
-	var artist = "";
+	var bandName = "";
 	for (var i = 3; i < process.argv.length; i++)
 	{
-		artist += process.argv[i];
+		bandName += process.argv[i];
 	}
-	console.log(artist);
+	console.log(bandName);
 }
 else
 {
-	artist = parameter;
+	bandName = parameter;
 }
 
 
-var queryUrl = `https://rest.bandsintown.com/artists/${artist}/events?app_id=${keys.bands.id}`;
-// var queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=" + keys.bands.id;
+var queryUrl = `https://rest.bandsintown.com/artists/${bandName}/events?app_id=${keys.bands.id}`;
+// var queryUrl = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=" + keys.bands.id;
 
 
 request(queryUrl, function(error, response, body) {
@@ -67,20 +67,42 @@ request(queryUrl, function(error, response, body) {
         {
         var daTime = JS[i].datetime;
             var dateForm = moment(daTime).format('MM/DD/YYYY');
-
-    
-            logIt("\n---------------------------------------------\n");
-
-                
-            logIt("Date: " + dateForm);
-            logIt("Name: " + JS[i].venue.name);
-            logIt("City: " + JS[i].venue.city);
+            
+            var stringsBuilder =
+            "\n---------------------------------------------\n" +
+            "Name: " +
+            JS[i].venue.name +
+            "\n" +
+            "City: " + 
+            JS[i].venue.city +
+            "\n" 
             if (JS[i].venue.region !== "")
             {
-                logIt("Country: " + JS[i].venue.region);
+                "Country: " + 
+                JS[i].venue.region
             }
-            logIt("Country: " + JS[i].venue.country);
-            logIt("\n---------------------------------------------\n");
+            "\n" +
+            "Country: " + 
+            JS[i].venue.country +
+            "\n" +
+            "Date: " + 
+            dateForm +
+            "\n" +
+            "\n---------------------------------------------\n";
+            logIt(stringsBuilder);
+    
+
+            // Code
+            // logIt("\n---------------------------------------------\n");            
+            // logIt("Name: " + JS[i].venue.name);
+            // logIt("City: " + JS[i].venue.city);
+            // if (JS[i].venue.region !== "")
+            // {
+            //     logIt("Country: " + JS[i].venue.region);
+            // }
+            // logIt("Country: " + JS[i].venue.country);
+            // logIt("Date: " + dateForm);
+            // logIt("\n---------------------------------------------\n");
 
         }
     }
@@ -104,13 +126,33 @@ function spotSong(parameter) {
         logIt('Error occurred: ' + error);
         return;
         } else {
-        logIt("\n---------------------------------------------\n");
-        logIt("Artist: " + data.tracks.items[0].artists[0].name);
-        logIt("Song: " + data.tracks.items[0].name);
-        logIt("Preview: " + data.tracks.items[3].preview_url.split("=")[0]); // It prints the secret spotify key if its not split
-        logIt("Album: " + data.tracks.items[0].album.name);
-        logIt("Release Date: " + moment(data.tracks.items[0].album.release_date).format('MM/DD/YYYY'));
-        logIt("\n---------------------------------------------\n");
+            var stringBuilders =
+            "\n---------------------------------------------\n" +
+            "Artist: " +
+            data.tracks.items[0].artists[0].name +
+            "\n" +
+            "Song: " +
+            data.tracks.items[0].name +
+            "\n" +
+            "Preview: " + 
+            data.tracks.items[3].preview_url.split("=")[0] +
+            "\n" +
+            "Album: " + 
+            data.tracks.items[0].album.name +
+            "\n" +
+            "Release Date: " + 
+            moment(data.tracks.items[0].album.release_date).format('MM/DD/YYYY') +
+            "\n" +
+            "\n---------------------------------------------\n";
+            logIt(stringBuilders);
+        // logIt("\n---------------------------------------------\n");
+        // logIt("Artist: " + data.tracks.items[0].artists[0].name);
+        // logIt("Song: " + data.tracks.items[0].name);
+        // logIt("Preview: " + data.tracks.items[3].preview_url.split("=")[0]); // It prints the secret spotify key if its not split
+        // logIt("Album: " + data.tracks.items[0].album.name);
+        // logIt("Release Date: " + moment(data.tracks.items[0].album.release_date).format('MM/DD/YYYY'));
+        
+        // logIt("\n---------------------------------------------\n");
         
         }
     });
@@ -131,16 +173,44 @@ function movieInfo(parameter) {
     request(queryUrl, function(err, res, body) {
         var bodyOf = JSON.parse(body);
         if (!err && res.statusCode === 200) {
-        logIt("\n---------------------------------------------\n");
-        logIt("Title: " + bodyOf.Title);
-        logIt("Release Year: " + bodyOf.Year);
-        logIt("IMDB Rating: " + bodyOf.imdbRating);
-        logIt("Rotten Tomatoes Rating: " + bodyOf.Ratings[1].Value); 
-        logIt("Country: " + bodyOf.Country);
-        logIt("Language: " + bodyOf.Language);
-        logIt("Plot: " + bodyOf.Plot);
-        logIt("Actors: " + bodyOf.Actors);
-        logIt("\n---------------------------------------------\n");
+            var stringBuilder =
+            "\n---------------------------------------------\n" +
+            "Title: " +
+            bodyOf.Title +
+            "\n" +
+            "Release Year: " +
+            bodyOf.Year +
+            "\n" +
+            "IMDB Rating: " +
+            bodyOf.imdbRating +
+            "\n" +
+            "Rotten Tomatoes Rating: " +
+            bodyOf.Ratings[1].Value +
+            "\n" +
+            "Country: " +
+            bodyOf.Country +
+            "\n" +
+            "Language: " +
+            bodyOf.Language +
+            "\n" +
+            "Plot: " +
+            bodyOf.Plot +
+            "\n" +
+            "Actors: " +
+            bodyOf.Actors +
+            "\n" +
+            "\n---------------------------------------------\n";
+            logIt(stringBuilder);
+        // logIt("\n---------------------------------------------\n");
+        // logIt("Title: " + bodyOf.Title);
+        // logIt("Release Year: " + bodyOf.Year);
+        // logIt("IMDB Rating: " + bodyOf.imdbRating);
+        // logIt("Rotten Tomatoes Rating: " + bodyOf.Ratings[1].Value); 
+        // logIt("Country: " + bodyOf.Country);
+        // logIt("Language: " + bodyOf.Language);
+        // logIt("Plot: " + bodyOf.Plot);
+        // logIt("Actors: " + bodyOf.Actors);
+        // logIt("\n---------------------------------------------\n");
         }
     });
 };
@@ -170,9 +240,9 @@ fs.readFile('random.txt', "utf8", function(error, data){
         }
         else
         {
-            var artist = dataArr[1].trim();
-            console.log(artist);
-            bandsInTown(artist);
+            var bandName = dataArr[1].trim();
+            console.log(bandName);
+            bandsInTown(bandName);
         }
   	  
     } 
@@ -190,9 +260,9 @@ function logIt(dataToLog) {
 
 	console.log(dataToLog);
 
-	fs.appendFile('log.txt', dataToLog + '\n', function(err) {
+	fs.appendFile('log.txt', dataToLog + '\n', function(error) {
 
-        if (err) return logIt('Error logging data to file: ' + err);
+        if (error) return logIt('Error logging data to file: ' + error);
         	
 	});
 }
