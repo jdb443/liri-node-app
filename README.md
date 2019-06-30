@@ -4,7 +4,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
 ### Walk through
 
-Note: This app is running npm version 6.9.2.
+Note: This app is running npm version 6.9.2 on a Mac with node installed.
 
 To get the app to work please download the following npm commands:
 
@@ -25,8 +25,10 @@ You will also need to create the following file
 SPOTIFY_ID=
 SPOTIFY_SECRET=
 
+# OMDBI API key
 OMDBI_KEY=
 
+# bandsintown API key
 BANDS_KEY=
 ```
 
@@ -41,7 +43,28 @@ node liri.js
 
 ### GIFs
 
+1. `concert-this` to run this command use `node liri.js concert-this '<Artist Name/Band Name>'`
+    example: `node liri.js concert-this 'Lady Gaga'`
 
+    
+
+2. `spotify-this-song` to run this command use `node liri.js spotify-this-song '<Song Name>'`
+    example 1: `node liri.js spotify-this-song 'Old Town Road'`
+
+
+
+    example 2: `node liri.js spotify-this-song` if no song is displayed
+
+
+3. `movie-this` to run this command use `node liri.js movie-this '<Movie Name>'`
+    example 1: `node liri.js movie-this 'Home Alone'`
+
+
+
+    example 2: `node liri.js movie-this` if no movie is displayed
+
+
+4. `do-what-it-says` to run this command use `node liri.js do-what-it-says`
 
 
 ### Screenshots
@@ -53,7 +76,8 @@ During the log.txt stage after running the terminal commands I noticed when view
 ```js
 .split("=")[0]
 ```
-to preview your spotify songs paste the url after the preview and add 
+to preview your spotify songs paste the url after the preview and add
 ```
 =SPOTIFY_ID
 ```
+Note: the ` SPOTIFY_ID ` should not be in quotes and should be written as  ` =123456789 ` and not `=SPOTIFY_ID123456789`
