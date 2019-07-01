@@ -16,7 +16,7 @@ npm i moment
 npm i liri-node-app
 ```
 
-You will also need to create the following file
+You will also need to create the following `.env` file.
 
 ```
 # .env contents format
@@ -45,7 +45,7 @@ node liri.js
 ### GIFs
 
 1. `concert-this` - To run this command use `node liri.js concert-this '<Artist Name/Band Name>'`. <br/>
-    example: `node liri.js concert-this 'Lady Gaga'`. <br/>
+    Example: `node liri.js concert-this 'Lady Gaga'`. <br/>
     <img src="images/gifs/concert-this.gif">
 
     <br/>
@@ -76,7 +76,7 @@ node liri.js
 
 ### Screenshots
 1. `concert-this` - To run this command use `node liri.js concert-this '<Artist Name/Band Name>'`. <br/>
-    example: `node liri.js concert-this 'Lady Gaga'`. <br/>
+    Example: `node liri.js concert-this 'Lady Gaga'`. <br/>
     <img src="images/photos/concert-this.png">
 
     <br/>
