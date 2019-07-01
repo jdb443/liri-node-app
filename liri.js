@@ -8,9 +8,6 @@ var spotify = new Spotify(keys.spotify);
 var action = process.argv[2];
 var parameter = process.argv[3];
 
-
-
-
 function switchCase() {
 
     switch (action) {
@@ -57,7 +54,6 @@ else
 var queryUrl = `https://rest.bandsintown.com/artists/${bandName}/events?app_id=${keys.bands.id}`;
 // var queryUrl = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=" + keys.bands.id;
 
-
 request(queryUrl, function(error, response, body) {
 
     if (!error && response.statusCode === 200) {
@@ -91,8 +87,6 @@ request(queryUrl, function(error, response, body) {
             "\n" +
             "\n---------------------------------------------\n";
             logIt(string1+string2+string3);
-  
-    
 
             // Code
             // logIt("\n---------------------------------------------\n");            
@@ -153,8 +147,7 @@ function spotSong(parameter) {
         // logIt("Song: " + data.tracks.items[0].name);
         // logIt("Preview: " + data.tracks.items[3].preview_url.split("=")[0]); // It prints the secret spotify key if its not split
         // logIt("Album: " + data.tracks.items[0].album.name);
-        // logIt("Release Date: " + moment(data.tracks.items[0].album.release_date).format('MM/DD/YYYY'));
-        
+        // logIt("Release Date: " + moment(data.tracks.items[0].album.release_date).format('MM/DD/YYYY'));        
         // logIt("\n---------------------------------------------\n");
         
         }
