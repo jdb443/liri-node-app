@@ -43,31 +43,31 @@ node liri.js
 
 ### GIFs
 
-1. `concert-this` to run this command use `node liri.js concert-this '<Artist Name/Band Name>'`. <br/>
+1. `concert-this` - To run this command use `node liri.js concert-this '<Artist Name/Band Name>'`. <br/>
     example: `node liri.js concert-this 'Lady Gaga'`. <br/>
     <img src="images/gifs/concert-this.gif">
 
     <br/>
-2. `spotify-this-song` to run this command use `node liri.js spotify-this-song '<Song Name>'`. <br/>
-    example 1: `node liri.js spotify-this-song 'Old Town Road'`. <br/>
-
-
-    <br/>
-    example 2: `node liri.js spotify-this-song` if no song is displayed. <br/>
-
+2. `spotify-this-song`- To run this command use `node liri.js spotify-this-song '<Song Name>'`. <br/>
+    Example 1: `node liri.js spotify-this-song 'Old Town Road'`. <br/>
+    <img src="images/gifs/spotify-this-song-old-town-road.gif">
 
     <br/>
-3. `movie-this` to run this command use `node liri.js movie-this '<Movie Name>'`. <br/>
-    example 1: `node liri.js movie-this 'Home Alone'`. <br/>
-
-
-    <br/>
-    example 2: `node liri.js movie-this` if no movie is displayed. <br/>
-
+    Example 2: `node liri.js spotify-this-song` if no song is displayed. <br/>
+    <img src="images/gifs/spotify-this-song.gif">
 
     <br/>
-4. `do-what-it-says` to run this command use `node liri.js do-what-it-says`. <br/>
+3. `movie-this` - To run this command use `node liri.js movie-this '<Movie Name>'`. <br/>
+    Example 1: `node liri.js movie-this 'Home Alone'`. <br/>
+    <img src="images/gifs/movie-this-home-alone.gif">
 
+    <br/>
+    Example 2: `node liri.js movie-this` if no movie is displayed. <br/>
+    <img src="images/gifs/movie-this.gif">
+
+    <br/>
+4. `do-what-it-says` - To run this command use `node liri.js do-what-it-says`. <br/>
+    <img src="images/gifs/do-what-it-says.gif">
 
     <br/>
 ### Screenshots
